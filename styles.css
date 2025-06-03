@@ -1,0 +1,66 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* nền đen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+ 
+  .container {
+    text-align: center;
+  }
+  
+  .heart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(-45deg);
+    /* Animation: đập to/thụt nhỏ vô tận */
+    animation: beat 1s infinite;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -50px;
+    left: 0;
+  }
+  
+  .heart::after {
+    top: 0;
+    left: 50px;
+  }
+  
+  @keyframes beat {
+    0% {
+      transform: rotate(-45deg) scale(1);
+    }
+    25% {
+      transform: rotate(-45deg) scale(1.2);
+    }
+    50% {
+      transform: rotate(-45deg) scale(1);
+    }
+    75% {
+      transform: rotate(-45deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(-45deg) scale(1);
+    }
+  }
+  
